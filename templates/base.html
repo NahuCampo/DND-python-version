@@ -8,12 +8,15 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="#" class="logo">DND</a>
+        <a href="{{url_for('index')}}" class="logo">DND</a>
         <ul class="nav-links">
+            {% if session['user'] %}
             <li><a href="#" class="nav-link">Home</a></li>
             <li><a href="#" class="nav-link">Services</a></li>
-            <li><a href="#" class="nav-link">About</a></li>
-            <li><a href="#" class="nav-link">Contact</a></li>
+            {%else%}
+            <li><a href="#" class="nav-link">Iniciar</a></li>
+            <li><a href="#" class="nav-link">Regstrar</a></li>
+            {%endif%}
         </ul>
     </nav>
 
